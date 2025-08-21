@@ -1,373 +1,168 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Onam Bharti — Discovery Portfolio</title>
-  <meta name="description" content="Onam Bharti — portfolio in discovery mode: empathetic leader, strategist, connector. Reinventing the next decade."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Onam Bharti - Portfolio</title>
   <style>
-    :root{
-      --bg: #0b0d12; /* dark base */
-      --panel:#121622;
-      --text:#e8ebf1;
-      --muted:#a4acc3;
-      --accent:#7dd3fc; /* sky */
-      --accent-2:#c4b5fd; /* violet */
-      --ok:#86efac;
-      --warn:#fde68a;
-      --ring: rgba(125,211,252,.5);
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      background: #f9fafc;
+      color: #333;
+      scroll-behavior: smooth;
     }
-    /* Light mode variables will be toggled by .light */
-    .light{
-      --bg:#f8fafc;
-      --panel:#ffffff;
-      --text:#0b1220;
-      --muted:#5b6477;
-      --accent:#0284c7;
-      --accent-2:#6d28d9;
-      --ok:#16a34a;
-      --warn:#b45309;
-      --ring: rgba(2,132,199,.3);
+
+    header {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    html,body{height:100%}
-    body{margin:0;background:radial-gradient(1200px 800px at 10% -10%,rgba(125,211,252,.12),transparent),radial-gradient(900px 600px at 110% 30%,rgba(196,181,253,.12),transparent),var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji','Segoe UI Emoji';line-height:1.5}
-    a{color:var(--accent)}
-    .container{max-width:1100px;margin:0 auto;padding:28px}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .badge{padding:.25rem .6rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;font-size:.8rem;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b0d12;padding:.8rem 1rem;border:none;border-radius:14px;font-weight:700;box-shadow:0 10px 24px rgba(125,211,252,.25);text-decoration:none}
-    .btn:focus{outline:3px solid var(--ring)}
-    .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.16)}
-    .grid{display:grid;gap:18px}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-top:28px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);backdrop-filter: blur(8px);border-radius:18px;padding:22px}
-    .soft{background:var(--panel)}
-    h1{font-family:'Playfair Display', ui-serif, Georgia, serif;font-size:clamp(2rem, 3.8vw, 3.2rem);line-height:1.1;margin:0 0 12px}
-    h2{font-size:clamp(1.2rem,2vw,1.4rem);font-weight:800;margin:0 0 6px}
-    h3{font-size:1.05rem;margin:0 0 8px}
-    p{margin:0 0 10px;color:var(--muted)}
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{font-size:.82rem;border:1px solid rgba(255,255,255,.16);padding:.35rem .6rem;border-radius:999px;color:var(--muted)}
-    .section{margin-top:26px}
-    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .kpi{background:var(--panel);border-radius:16px;padding:16px;border:1px solid rgba(255,255,255,.06)}
-    .kpi .n{font-weight:900;font-size:1.6rem}
-    .list{display:grid;gap:12px}
-    .row{display:flex;gap:14px;align-items:flex-start}
-    .dot{width:10px;height:10px;border-radius:50%;margin-top:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
-    .two{grid-template-columns:repeat(2,1fr)}
-    .three{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-    .pill{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .7rem;border:1px solid rgba(255,255,255,.16);border-radius:999px}
-    .footer{margin:32px 0 14px;color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    .avatar{width:110px;height:110px;border-radius:24px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#0b0d12;font-weight:900}
-    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-    .exp-card{border:1px dashed rgba(255,255,255,.2)}
-    .tags{display:flex;gap:8px;flex-wrap:wrap}
-    .tag{font-size:.75rem;padding:.25rem .5rem;border-radius:999px;background:rgba(125,211,252,.12);border:1px solid rgba(125,211,252,.25)}
-    .switch{cursor:pointer;border-radius:12px;border:1px solid rgba(255,255,255,.18);padding:6px 10px}
-    @media (max-width: 860px){ .hero{grid-template-columns:1fr;}.kpis{grid-template-columns:repeat(2,1fr)} }
+
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover { opacity: 0.7; }
+
+    section {
+      padding: 4rem 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    section:nth-child(even) {
+      background: linear-gradient(180deg, #fdfbfb, #ebedee);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    p { max-width: 700px; margin-bottom: 2rem; }
+
+    .musings {
+      margin-top: 2rem;
+    }
+
+    .musings h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    article {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    article h4 {
+      margin-bottom: 0.5rem;
+      color: #6a11cb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #222;
+      color: white;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- NAV -->
-    <nav class="nav">
-      <div class="brand">
-        <span class="badge">Portfolio</span>
-        <strong>Onam Bharti</strong>
-      </div>
-      <div style="display:flex; gap:10px; align-items:center">
-        <button id="modeBtn" class="switch" aria-label="Toggle color mode">🌙/☀️</button>
-        <a class="btn secondary" href="#contact">Contact</a>
-        <a class="btn" href="#experiments">View Experiments</a>
-      </div>
+  <header>
+    <h1>Onam Bharti</h1>
+    <nav>
+      <a href="#professional">Professional</a>
+      <a href="#personal">Personal</a>
     </nav>
+  </header>
 
-    <!-- HERO -->
-    <section class="hero section" id="top">
-      <div class="card">
-        <h1>Reinventing my next decade.</h1>
-        <p>I'm <strong style="color:var(--text)">Onam</strong> — a 35‑year‑old tech leader entering a purposeful discovery phase. I’ve led mid‑sized teams, built trusted relationships, and I’m known for a charismatic, empathetic leadership style. Financial runway gives me freedom; the unknown gives me energy.</p>
-        <div class="chips" style="margin-top:12px">
-          <span class="chip">Empathetic Leader</span>
-          <span class="chip">Strategic Thinker</span>
-          <span class="chip">Connector</span>
-          <span class="chip">Global Traveler (~30 countries)</span>
-          <span class="chip">Wife + Dog‑mom</span>
-        </div>
-        <div style="display:flex; gap:10px; margin-top:16px">
-          <a class="btn" href="#explore">Explore Directions</a>
-          <a class="btn secondary" href="#now">Now</a>
-        </div>
-      </div>
-      <div class="card soft" aria-label="quick summary">
-        <div class="kpis">
-          <div class="kpi"><div class="n">10+ yrs</div><div>Tech leadership</div></div>
-          <div class="kpi"><div class="n">30</div><div>Countries visited</div></div>
-          <div class="kpi"><div class="n">15–40</div><div>Team size led</div></div>
-          <div class="kpi"><div class="n">∞</div><div>Curiosity</div></div>
-        </div>
-        <div class="section">
-          <h3>What I'm optimizing for</h3>
-          <div class="list">
-            <div class="row"><span class="dot"></span><div>
-              <strong>Impact and autonomy</strong>
-              <p>More ownership, less bureaucracy; projects that compound.</p>
-            </div></div>
-            <div class="row"><span class="dot"></span><div>
-              <strong>Human‑centered leadership</strong>
-              <p>Environments where empathy, clarity, and momentum are the norm.</p>
-            </div></div>
-            <div class="row"><span class="dot"></span><div>
-              <strong>Life design</strong>
-              <p>Work that fits a rich life with my husband, our dog, and travel.</p>
-            </div></div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Professional Section -->
+  <section id="professional">
+    <h2>Professional</h2>
+    <p>
+      I’ve spent 15+ years in tech leading mid-sized teams, building strategy, and creating 
+      impact through empathetic leadership. My next decade is about reinvention — 
+      stepping beyond corporate paths and designing a career with intention.
+    </p>
 
-    <!-- ABOUT / STORY -->
-    <section class="section" id="about">
-      <div class="grid two">
-        <div class="card">
-          <h2>Short Story</h2>
-          <p>My corporate path has been successful—but mostly emergent. I often followed the next obvious step. Now, I’m choosing my path deliberately. I’m experimenting widely, listening closely, and moving decisively when signal appears.</p>
-          <div class="tags" style="margin-top:10px">
-            <span class="tag">Empathy first</span>
-            <span class="tag">Strategy</span>
-            <span class="tag">Relationship‑building</span>
-            <span class="tag">Operator mindset</span>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Strengths at a Glance</h2>
-          <div class="list">
-            <div class="row"><span class="dot"></span><div><strong>People magnetism</strong><p>I'm known to be charismatic—people tend to want to collaborate and stay connected.</p></div></div>
-            <div class="row"><span class="dot"></span><div><strong>Team leadership</strong><p>Built healthy, mid‑sized teams with clear goals, trust, and consistent delivery.</p></div></div>
-            <div class="row"><span class="dot"></span><div><strong>Strategic clarity</strong><p>Synthesize noise into crisp direction; align stakeholders; ship.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="musings">
+      <h3>Onam’s Musings</h3>
+      <article>
+        <h4>On Empathetic Leadership</h4>
+        <p>Leadership is not about control; it’s about clarity, trust, and connection. 
+        I’ve seen teams transform when they feel truly heard.</p>
+      </article>
+      <article>
+        <h4>On Reinvention</h4>
+        <p>Following the path laid in front of me has worked so far. Now, I choose to 
+        create my own path — daunting, but exciting.</p>
+      </article>
+    </div>
+  </section>
 
-    <!-- EXPLORE DIRECTIONS / NEXT DECADE -->
-    <section class="section" id="explore">
-      <div class="grid three">
-        <article class="card exp-card">
-          <h2>Start a Company</h2>
-          <p>Explore founder‑market fit by running small, fast experiments in spaces I care about.</p>
-          <div class="chips" style="margin-top:10px">
-            <span class="chip">Problem interviews</span>
-            <span class="chip">No‑code MVPs</span>
-            <span class="chip">Distribution testing</span>
-          </div>
-          <details style="margin-top:10px"><summary>Hypotheses</summary>
-            <ul>
-              <li>My leadership & GTM instincts are a strong wedge for 0→1.</li>
-              <li>Relationship capital → first design partners.</li>
-            </ul>
-          </details>
-        </article>
-        <article class="card exp-card">
-          <h2>Buy a Business</h2>
-          <p>Evaluate acquiring an SMB with stable cash flow where my ops and people skills compound.</p>
-          <div class="chips" style="margin-top:10px">
-            <span class="chip">Search thesis</span>
-            <span class="chip">Deal flow</span>
-            <span class="chip">Operator playbooks</span>
-          </div>
-          <details style="margin-top:10px"><summary>Hypotheses</summary>
-            <ul>
-              <li>Empathy + systems → culture & margins improve.</li>
-              <li>Diversified revenue reduces risk during transition.</li>
-            </ul>
-          </details>
-        </article>
-        <article class="card exp-card">
-          <h2>Advisory & Fractional</h2>
-          <p>Partner with founders and leaders on org design, product ops, and strategic planning.</p>
-          <div class="chips" style="margin-top:10px">
-            <span class="chip">OKRs & cadence</span>
-            <span class="chip">Hiring & onboarding</span>
-            <span class="chip">Change mgmt</span>
-          </div>
-          <details style="margin-top:10px"><summary>Ideal engagements</summary>
-            <ul>
-              <li>3–6 month sprints to unlock growth or reduce chaos.</li>
-              <li>Coach emerging managers to become trusted leaders.</li>
-            </ul>
-          </details>
-        </article>
-      </div>
-    </section>
+  <!-- Personal Section -->
+  <section id="personal">
+    <h2>Personal</h2>
+    <p>
+      I’ve traveled to nearly 30 countries, shared countless adventures with my husband 
+      and our dog, and discovered that curiosity fuels joy. My personal life grounds me, 
+      while exploration reminds me that possibility is infinite.
+    </p>
 
-    <!-- FEATURED HIGHLIGHTS / PROJECTS (edit as you add) -->
-    <section class="section" id="highlights">
-      <div class="grid two">
-        <div class="card">
-          <h2>Featured Highlights</h2>
-          <ul>
-            <li><strong>Led mid‑sized teams</strong> to deliver multi‑stakeholder initiatives on time.</li>
-            <li><strong>Scaled cross‑functional rituals</strong> that improved execution velocity.</li>
-            <li><strong>Built trusted relationships</strong> across product, design, and engineering.</li>
-          </ul>
-          <p style="margin-top:8px"><em>More detailed case studies coming as experiments mature.</em></p>
-        </div>
-        <div class="card">
-          <h2>Capabilities</h2>
-          <div class="chips">
-            <span class="chip">Team Leadership</span>
-            <span class="chip">Org Design</span>
-            <span class="chip">Product Thinking</span>
-            <span class="chip">Strategy</span>
-            <span class="chip">Stakeholder Mgmt</span>
-            <span class="chip">Hiring & Coaching</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="musings">
+      <h3>Onam’s Musings</h3>
+      <article>
+        <h4>On Travel & Perspective</h4>
+        <p>Every country adds a new lens to how I see the world. Wonder is not a place; 
+        it’s a practice.</p>
+      </article>
+      <article>
+        <h4>On Connection</h4>
+        <p>Charisma is not magic — it’s being fully present. People feel drawn to energy 
+        that welcomes them.</p>
+      </article>
+    </div>
+  </section>
 
-    <!-- EXPERIMENTS JOURNAL -->
-    <section class="section" id="experiments">
-      <div class="card">
-        <h2>Experiments Journal</h2>
-        <p>Small bets to reduce uncertainty. I ship, learn, and iterate here.</p>
-        <div class="grid three" style="margin-top:10px">
-          <!-- DUPLICATE & EDIT CARDS BELOW AS YOU ADD EXPERIMENTS -->
-          <article class="card soft">
-            <h3>Discovery Calls Sprint</h3>
-            <p>10 conversations with founders/operators to map pains & opportunities.</p>
-            <div class="tags"><span class="tag">Week 1</span><span class="tag">Signals</span></div>
-          </article>
-          <article class="card soft">
-            <h3>Problem Interviews (SMB ops)</h3>
-            <p>Qualitative interviews to test acquisition theses and operator playbooks.</p>
-            <div class="tags"><span class="tag">Week 2</span><span class="tag">SMB</span></div>
-          </article>
-          <article class="card soft">
-            <h3>No‑Code MVP Test</h3>
-            <p>Landing page + waitlist to validate interest and distribution channels.</p>
-            <div class="tags"><span class="tag">Week 3</span><span class="tag">MVP</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- NOW / LIVING -->
-    <section class="section" id="now">
-      <div class="grid two">
-        <div class="card">
-          <h2>Now</h2>
-          <ul>
-            <li>Designing my discovery roadmap and weekly experiment cadence.</li>
-            <li>Traveling (nearly 30 countries and counting) with my husband and our dog.</li>
-            <li>Gathering mentors and peers who value momentum and kindness.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>What I’m Looking For</h2>
-          <ul>
-            <li>Warm intros to thoughtful founders, operators, and small‑business owners.</li>
-            <li>Short advisory projects where empathy + structure could unlock progress.</li>
-            <li>Stories about reinvention—what worked, what didn’t.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT / SOCIAL -->
-    <section class="section" id="contact">
-      <div class="grid two">
-        <div class="card">
-          <h2>Contact</h2>
-          <p>Best way to reach me is email. I’m open to thoughtful notes and serendipitous collisions.</p>
-          <form class="grid" style="grid-template-columns:1fr 1fr; gap:12px" onsubmit="sendMsg(event)">
-            <label> Name<br><input required name="name" class="i" placeholder="Your name"/></label>
-            <label> Email<br><input required name="email" type="email" class="i" placeholder="you@example.com"/></label>
-            <label style="grid-column:1/-1"> Message<br><textarea required name="message" class="i" rows="5" placeholder="What should we explore together?"></textarea></label>
-            <div style="display:flex; gap:10px; align-items:center">
-              <button class="btn" type="submit">Send</button>
-              <span id="sent" aria-live="polite" style="display:none">Thanks! This demo stores nothing—replace with your email or form tool.</span>
-            </div>
-          </form>
-        </div>
-        <div class="card">
-          <h2>Links</h2>
-          <div class="chips">
-            <!-- EDIT THESE LINKS -->
-            <a class="pill" href="#" aria-label="LinkedIn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.1h.1c.5-1 1.8-2.1 3.7-2.1 3.9 0 4.6 2.6 4.6 6V24h-4v-7.2c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24h-4V8.5z"/></svg>
-              <span>LinkedIn</span>
-            </a>
-            <a class="pill" href="#" aria-label="X / Twitter">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21.5l-7.61 8.695L23.5 22h-7.023l-5.49-6.336L4.5 22H1.244l8.15-9.315L.5 2h7.18l4.955 5.727L18.244 2z"/></svg>
-              <span>X</span>
-            </a>
-            <a class="pill" href="#" aria-label="Email"><span>✉️</span><span>Email</span></a>
-            <a class="pill" href="#" aria-label="Resume"><span>📄</span><span>Resume (PDF)</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div>© <span id="year"></span> Onam Bharti</div>
-      <div>
-        <span class="badge">Charismatic</span>
-        <span class="badge">Empathetic</span>
-        <span class="badge">Strategic</span>
-      </div>
-    </footer>
-  </div>
-
-  <style>
-    /* Inputs styling */
-    .i{width:100%; padding:.8rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.04); color:var(--text)}
-    .i::placeholder{color:var(--muted)}
-    .i:focus{outline:3px solid var(--ring)}
-  </style>
-
-  <script>
-    // Color mode toggle
-    const btn = document.getElementById('modeBtn');
-    const root = document.documentElement;
-    const saved = localStorage.getItem('mode');
-    if(saved === 'light'){ document.body.classList.add('light'); }
-    btn.addEventListener('click', ()=>{
-      document.body.classList.toggle('light');
-      localStorage.setItem('mode', document.body.classList.contains('light') ? 'light' : 'dark');
-    });
-
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Fake form handler (replace with real backend or form tool)
-    function sendMsg(e){
-      e.preventDefault();
-      const s = document.getElementById('sent');
-      s.style.display = 'inline-block';
-      setTimeout(()=> s.style.display='none', 4000);
-      e.target.reset();
-    }
-    window.sendMsg = sendMsg;
-  </script>
-
-  <!--
-  =============================
-  QUICK EDIT GUIDE (search for these):
-  - Onam Bharti (name/brand)
-  - Featured Highlights (add case studies & links)
-  - Experiments Journal (duplicate cards for new bets)
-  - Links (replace with actual URLs & email)
-  - Contact form (swap sendMsg with your form service)
-  - Colors: tweak CSS variables in :root and .light
-  =============================
-  -->
+  <footer>
+    <p>© 2025 Onam Bharti. Built with curiosity & reinvention in mind.</p>
+  </footer>
 </body>
 </html>
