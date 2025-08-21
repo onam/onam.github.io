@@ -10,13 +10,13 @@
 
     body {
       font-family: "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      background: #f9fafc;
+      background: #f7f7f7;
       color: #333;
       scroll-behavior: smooth;
     }
 
     header {
+      background: #6a11cb;
       background: linear-gradient(90deg, #6a11cb, #2575fc);
       color: white;
       padding: 1.5rem;
@@ -27,8 +27,8 @@
     }
 
     header h1 {
-      margin-bottom: 0.5rem;
       font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
 
     nav a {
@@ -44,51 +44,48 @@
     section {
       padding: 4rem 2rem;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      animation: fadeIn 1.5s ease;
     }
 
-    section:nth-child(even) {
-      background: linear-gradient(180deg, #fdfbfb, #ebedee);
-    }
-
-    h2 {
+    section h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
       color: #222;
+      text-align: center;
     }
 
-    p { max-width: 700px; margin-bottom: 2rem; }
-
-    .musings {
-      margin-top: 2rem;
+    section p {
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      text-align: center;
+      line-height: 1.7;
+      font-size: 1.1rem;
     }
 
-    .musings h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #444;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    article {
+    .card {
       background: white;
       border-radius: 12px;
       padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    article:hover {
+    .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
     }
 
-    article h4 {
+    .card h4 {
       margin-bottom: 0.5rem;
       color: #6a11cb;
+      font-size: 1.2rem;
     }
 
     footer {
@@ -98,13 +95,13 @@
       color: white;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    @media (max-width: 600px) {
+      section { padding: 3rem 1rem; }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Onam Bharti</h1>
     <nav>
@@ -117,23 +114,23 @@
   <section id="professional">
     <h2>Professional</h2>
     <p>
-      I’ve spent 15+ years in tech leading mid-sized teams, building strategy, and creating 
-      impact through empathetic leadership. My next decade is about reinvention — 
-      stepping beyond corporate paths and designing a career with intention.
+      I’ve spent 15+ years in tech leading mid-sized teams, building strategy, and creating impact 
+      through empathetic leadership. My next decade is about reinvention — stepping beyond corporate paths and designing a career with intention.
     </p>
 
-    <div class="musings">
-      <h3>Onam’s Musings</h3>
-      <article>
-        <h4>On Empathetic Leadership</h4>
-        <p>Leadership is not about control; it’s about clarity, trust, and connection. 
-        I’ve seen teams transform when they feel truly heard.</p>
-      </article>
-      <article>
-        <h4>On Reinvention</h4>
-        <p>Following the path laid in front of me has worked so far. Now, I choose to 
-        create my own path — daunting, but exciting.</p>
-      </article>
+    <div class="cards">
+      <div class="card">
+        <h4>Empathetic Leadership</h4>
+        <p>Leadership is not about control; it’s about clarity, trust, and connection. Teams transform when they feel truly heard.</p>
+      </div>
+      <div class="card">
+        <h4>Strategic Thinking</h4>
+        <p>Designing paths for growth requires balancing vision with execution. Strategy and relationships are inseparable.</p>
+      </div>
+      <div class="card">
+        <h4>Reinvention</h4>
+        <p>Following the path laid before me has worked so far. Now, I choose to create my own path — daunting, but exciting.</p>
+      </div>
     </div>
   </section>
 
@@ -141,23 +138,22 @@
   <section id="personal">
     <h2>Personal</h2>
     <p>
-      I’ve traveled to nearly 30 countries, shared countless adventures with my husband 
-      and our dog, and discovered that curiosity fuels joy. My personal life grounds me, 
-      while exploration reminds me that possibility is infinite.
+      I’ve traveled to nearly 30 countries, shared countless adventures with my husband and our dog, and discovered that curiosity fuels joy. My personal life grounds me, while exploration reminds me that possibility is infinite.
     </p>
 
-    <div class="musings">
-      <h3>Onam’s Musings</h3>
-      <article>
-        <h4>On Travel & Perspective</h4>
-        <p>Every country adds a new lens to how I see the world. Wonder is not a place; 
-        it’s a practice.</p>
-      </article>
-      <article>
-        <h4>On Connection</h4>
-        <p>Charisma is not magic — it’s being fully present. People feel drawn to energy 
-        that welcomes them.</p>
-      </article>
+    <div class="cards">
+      <div class="card">
+        <h4>Travel & Perspective</h4>
+        <p>Every country adds a new lens to how I see the world. Wonder is not a place; it’s a practice.</p>
+      </div>
+      <div class="card">
+        <h4>Connection & Charisma</h4>
+        <p>Being fully present draws people to you. Charisma is energy that welcomes others authentically.</p>
+      </div>
+      <div class="card">
+        <h4>Life With My Dog</h4>
+        <p>Simple joy lives in small moments — walks, cuddles, and shared adventures remind me to stay grounded.</p>
+      </div>
     </div>
   </section>
 
